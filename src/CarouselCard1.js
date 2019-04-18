@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import { Card, CardImg } from 'reactstrap';
 
 const CarouselCard1 = (props) => (
@@ -11,7 +11,10 @@ const CarouselCard1 = (props) => (
               top width="100%" 
               max-height="100%" 
               max-width="100%" 
-              src={image} alt={name} />
+              src={image} alt={name} 
+              onClick={props.handleClick1}
+           
+              />
            </Card>
 
        ))
