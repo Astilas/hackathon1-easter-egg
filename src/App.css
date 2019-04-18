@@ -7,4 +7,15 @@
 body, .moviecard{
   background-color: black;
 }
+.btn-black {
+color: black;
+display: none;
+}
+.eggimage {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+
 

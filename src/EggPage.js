@@ -59,32 +59,33 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      characters: [],
-      egg: [],
+      eggs: [],
+      character: [],
       settings1: initialSettings,
       settings2: initialSettings,
       idCard1: '',
       idCard2: '',
     };
-    this.getCharacters = this.getCharacters.bind(this);
+    this.getEggs = this.getEggs.bind(this);
+    this.getCharacter = this.getCharacter.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
   }
 
   componentDidMount() {
-    this.getCharacters();
     this.getEggs();
+    this.getCharacter();
   }
 
-  getCharacters() {
-    axios.get('http://easteregg.wildcodeschool.fr/api/characters')
-      .then(response => response.data)
-      .then(data => this.setState({ characters: data.slice(0, 30) }));
-  }
   getEggs() {
-    axios.get('http://easteregg.wildcodeschool.fr/api/eggs/random')
+    axios.get('http://easteregg.wildcodeschool.fr/api/eggs')
       .then(response => response.data)
-      .then(data => this.setState({ egg: data }));
+      .then(data => this.setState({ eggs: data.slice(0, 30) }));
+  }
+  getCharacter() {
+    axios.get('http://easteregg.wildcodeschool.fr/api/characters/random')
+      .then(response => response.data)
+      .then(data => this.setState({ character: data }));
   }
 
 
@@ -114,8 +115,8 @@ class Home extends Component {
 
   render() {
 
-    const { characters } = this.state;
-    const slide = slicing(characters);
+    const { eggs } = this.state;
+    const slide = slicing(eggs);
     return (
       <Container>
         <h2> CarouselCard </h2>
@@ -128,9 +129,10 @@ class Home extends Component {
           settings2={this.state.settings2}
           handleClick2={this.handleClick2} />
         <button className="btn btn-black">bouton</button>
-        <Link to="/egg">
-          <img className="eggimage mx-auto mt-5" src={this.state.egg.image} alt="egg"/>
+        <Link to="/">
+          <img className="eggimage mx-auto mt-5" src={this.state.character.image} alt="egg" />
         </Link>
+
       </Container>
     );
   }
