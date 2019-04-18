@@ -1,9 +1,14 @@
 .cardimage, .posterfolio, .trendscol {
-  border-radius: 15px;
+  border-radius: 10px;
   width: 200px;
   height: 200px;
  }
-
+h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 150px;
+  margin-top: 50px;
+}
 body, .moviecard{
   background-color: black;
 }
@@ -23,3 +28,6 @@ display: none;
   justify-content: space-around;
 }
 
+.carousel {
+  margin-bottom: 50px;
+}

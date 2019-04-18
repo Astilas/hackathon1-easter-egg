@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <Home /> */}
+        <h2>Roulegg</h2>
         <Route path="/" exact component={Home} />
         <Route path="/egg" component={EggPage} /> 
       </div>

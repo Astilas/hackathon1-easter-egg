@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import Carousel1 from './Carousel1';
 import Carousel2 from './Carousel2';
 import { Link } from 'react-router-dom';
@@ -116,23 +116,32 @@ class Home extends Component {
   }
 
   render() {
-      let eggClass = classNames({
-        'eggnodisplay': this.state.idCard1 !== this.state.idCard2 || this.state.idCard1 === '',
-        'eggimage': this.state.idCard1 === this.state.idCard2,
-      })
+    let eggClass = classNames({
+      'eggnodisplay': this.state.idCard1 !== this.state.idCard2 || this.state.idCard1 === '',
+      'eggimage': this.state.idCard1 === this.state.idCard2,
+    })
     const { eggs } = this.state;
     const slide = slicing(eggs);
     return (
       <Container>
-        <h2> CarouselCard </h2>
-        <Carousel1
-          slide={slide}
-          settings1={this.state.settings1}
-          handleClick1={this.handleClick1} />
-        <Carousel2
-          slide={slide}
-          settings2={this.state.settings2}
-          handleClick2={this.handleClick2} />
+        <Row>
+          <Col lg="6">
+            <div className="carousel">
+              <Carousel1
+                slide={slide}
+                settings1={this.state.settings1}
+                handleClick1={this.handleClick1} />
+            </div>
+          </Col>
+          <Col lg="6">
+            <div className="carousel">
+              <Carousel2
+                slide={slide}
+                settings2={this.state.settings2}
+                handleClick2={this.handleClick2} />
+            </div>
+          </Col>
+        </Row>
         <button className="btn btn-black">bouton</button>
         <Link to="/">
           <img className={eggClass} src={this.state.character.image} alt="egg" />
