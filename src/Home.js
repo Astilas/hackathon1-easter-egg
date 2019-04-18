@@ -42,13 +42,13 @@ const initialSettings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        initialSlide: 2
+        initialSlide: 1
       }
     },
     {
       breakpoint: 520,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 2
       }
     }
@@ -79,7 +79,7 @@ class Home extends Component {
   getCharacters() {
     axios.get('http://easteregg.wildcodeschool.fr/api/characters')
       .then(response => response.data)
-      .then(data => this.setState({ characters: data.slice(0, 30) }));
+      .then(data => this.setState({ characters: data }));
   }
   getEggs() {
     axios.get('http://easteregg.wildcodeschool.fr/api/eggs/random')
@@ -96,21 +96,14 @@ class Home extends Component {
     })
   }
 
-
   handleClick2(id) {
     this.setState({
       settings2:
         { ...this.state.settings2, autoplay: !this.state.settings2.autoplay },
       idCard2: id
-
     })
   }
 
-  match() {
-    if (this.state.idCard1 === this.state.idCard2) {
-
-    }
-  }
 
   render() {
 
@@ -129,7 +122,9 @@ class Home extends Component {
           handleClick2={this.handleClick2} />
         <button className="btn btn-black">bouton</button>
         <Link to="/egg">
-          <img className="eggimage mx-auto mt-5" src={this.state.egg.image} alt="egg"/>
+          <div className="marge">
+            <img className="eggimage mx-auto"  src={this.state.egg.image} alt="egg"/>
+          </div>
         </Link>
       </Container>
     );

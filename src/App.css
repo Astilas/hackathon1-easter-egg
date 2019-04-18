@@ -12,10 +12,15 @@ color: black;
 display: none;
 }
 .eggimage {
+/*visibility: hidden;*/
   width: 200px;
   height: 200px;
   display: flex;
   justify-content: space-around;
+}
+
+.marge{
+  margin-top: 300px;
 }
 
 
