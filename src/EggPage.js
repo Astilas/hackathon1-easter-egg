@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import { threadId } from 'worker_threads';
 
+let classNames = require('classnames');
+
 function slicing(arr) {
   const size = 1;
   const finalarr = [];
@@ -114,7 +116,10 @@ class Home extends Component {
   }
 
   render() {
-
+      let eggClass = classNames({
+        'eggnodisplay': this.state.idCard1 !== this.state.idCard2 || this.state.idCard1 === '',
+        'eggimage': this.state.idCard1 === this.state.idCard2,
+      })
     const { eggs } = this.state;
     const slide = slicing(eggs);
     return (
@@ -130,7 +135,7 @@ class Home extends Component {
           handleClick2={this.handleClick2} />
         <button className="btn btn-black">bouton</button>
         <Link to="/">
-          <img className="eggimage mx-auto mt-5" src={this.state.character.image} alt="egg" />
+          <img className={eggClass} src={this.state.character.image} alt="egg" />
         </Link>
 
       </Container>

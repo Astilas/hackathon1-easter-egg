@@ -11,11 +11,15 @@ body, .moviecard{
 color: black;
 display: none;
 }
+
+.eggnodisplay {
+  visibility: hidden;
+}
+
 .eggimage {
   width: 200px;
   height: 200px;
   display: flex;
   justify-content: space-around;
 }
-
 

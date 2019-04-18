@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import { threadId } from 'worker_threads';
 
+let classNames = require('classnames');
+
 function slicing(arr) {
   const size = 1;
   const finalarr = [];
@@ -21,7 +23,7 @@ const initialSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 80,
+  autoplaySpeed: 40,
   arrows: false,
   pauseOnHover: false,
   vertical: false,
@@ -79,7 +81,7 @@ class Home extends Component {
   getCharacters() {
     axios.get('http://easteregg.wildcodeschool.fr/api/characters')
       .then(response => response.data)
-      .then(data => this.setState({ characters: data.slice(0, 30) }));
+      .then(data => this.setState({ characters: data }));
   }
   getEggs() {
     axios.get('http://easteregg.wildcodeschool.fr/api/eggs/random')
@@ -113,7 +115,10 @@ class Home extends Component {
   }
 
   render() {
-
+    let eggClass = classNames({
+      'eggnodisplay': this.state.idCard1 !== this.state.idCard2 || this.state.idCard1 === '',
+      'eggimage': this.state.idCard1 === this.state.idCard2,
+    })
     const { characters } = this.state;
     const slide = slicing(characters);
     return (
@@ -129,7 +134,7 @@ class Home extends Component {
           handleClick2={this.handleClick2} />
         <button className="btn btn-black">bouton</button>
         <Link to="/egg">
-          <img className="eggimage mx-auto mt-5" src={this.state.egg.image} alt="egg"/>
+          <img className={eggClass} src={this.state.egg.image} alt="egg"/>
         </Link>
       </Container>
     );
