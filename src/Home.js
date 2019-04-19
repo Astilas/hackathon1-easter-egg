@@ -127,7 +127,7 @@ class Home extends Component {
 
     return (
       <Container>
-        <h2>Roulegg<img src={logo} alt="logo"/></h2>
+        <h2>Roulegg<img className="logo" src={logo} alt="logo"/></h2>
         <Row>
           <Col lg="6">
             <div className="carousel">

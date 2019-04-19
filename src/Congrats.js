@@ -6,8 +6,9 @@ class Congrats extends Component {
     return (
       <div>
         <h1 className="congrats">
-          Congrats !!!
+          Congrats you win!!!
         </h1>
+        <h3 className="congrats">(Without do anything by the way)</h3>
         <Row>
           <Col lg="4" md="4" sm="12" xs="12">
             <img src="https://media.giphy.com/media/19U2aQ323iGtO/giphy.gif" alt="iio" />
