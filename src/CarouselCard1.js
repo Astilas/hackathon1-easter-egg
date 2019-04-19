@@ -18,7 +18,6 @@ const CarouselCard1 = (props) => (
               props.handleClick1(image);
             }}
           />
-          
         </Card>
 
       ))
