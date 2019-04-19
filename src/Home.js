@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import Carousel1 from './Carousel1';
 import Carousel2 from './Carousel2';
 import { Link } from 'react-router-dom';
+import logo from './logo.svg';
 import axios from 'axios';
 // import { threadId } from 'worker_threads';
 
@@ -19,11 +20,11 @@ function slicing(arr) {
 const initialSettings = {
   dots: false,
   infinite: true,
-  speed: 2,
+  speed: 5,
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 800,
+  autoplaySpeed: 100,
   arrows: false,
   pauseOnHover: false,
   vertical: false,
@@ -117,12 +118,7 @@ class Home extends Component {
     const slide = slicing(characters);
     return (
       <Container>
-<<<<<<< HEAD
-        <h2>Roulegg</h2>
-        <Button className="" outline color="secondary">Restart</Button>
-=======
-          <Button refresh="true" onClick={() => window.location.reload()} outline color="secondary">Restart</Button>
->>>>>>> 878b04f72fc0c1776fe970123362bd92dbff7917
+        <h2>Roulegg<img src={logo} alt="logo"/></h2>
         <Row>
           <Col lg="6">
             <div className="carousel">
@@ -141,7 +137,7 @@ class Home extends Component {
             </div>
           </Col>
         </Row>
-        <button className="btn btn-black">bouton</button>
+        <Button className="mx-auto restartbutton" refresh="true" onClick={() => window.location.reload()} outline color="secondary">Restart</Button>
         <Link to="/egg">
           <img className={eggClass} src={this.state.egg.image} alt="egg" />
         </Link>

@@ -30,7 +30,7 @@
 h2 {
   text-align: center;
   color: white;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   margin-top: 50px;
 }
 h3, h4, h5 {
@@ -54,6 +54,11 @@ display: none;
 text-underline-position: none;
 }
 
+.restartbutton {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+}
 .eggnodisplay {
   visibility: hidden;
 }

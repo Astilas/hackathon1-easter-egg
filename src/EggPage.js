@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import Carousel1 from './Carousel1';
 import Carousel2 from './Carousel2';
 import Carousel3 from './Carousel3';
@@ -176,7 +176,7 @@ class Home extends Component {
             </div>
           </Col>
         </Row>
-        <button className="btn btn-black">bouton</button>
+        <Button className="mx-auto restartbutton" refresh="true" onClick={() => window.location.reload()} outline color="secondary">Restart</Button>
         <Link to="/character">
           <img className={eggClass} src={this.state.character.image} alt="egg" />
         </Link>
