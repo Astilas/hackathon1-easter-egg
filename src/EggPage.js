@@ -59,7 +59,7 @@ const initialSettings = {
   ]
 }
 
-class Home extends Component {
+class EggPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -119,7 +119,7 @@ class Home extends Component {
     this.setState({
       settings3:
         { ...this.state.settings3, autoplay: !this.state.settings3.autoplay },
-      idCar3: image
+      idCard3: image
     })
   }
 
@@ -134,14 +134,12 @@ class Home extends Component {
 
   render() {
       let eggClass = classNames({
-        'eggnodisplay': this.state.idCard1 !== this.state.idCard2 || this.state.idCard1 === '',
-        'eggimage': this.state.idCard1 === this.state.idCard2,
+        'eggnodisplay': ((this.state.idCard1 !== this.state.idCard2) || (this.state.idCard1 !== this.state.idCard3) || (this.state.idCard1 !== this.state.idCard4))  || this.state.idCard1 === '',
+        'eggimage': (this.state.idCard1 === this.state.idCard2) && (this.state.idCard1 === this.state.idCard3) && (this.state.idCard1 === this.state.idCard4),
         image: true
       })
     const { eggs } = this.state;
     const slide = slicing(eggs);
-    const slide2 = slicing(eggs.reverse());
-
     return (
       <Container>
          <h2>Roulegg</h2>
@@ -149,7 +147,7 @@ class Home extends Component {
           <Col lg="3">
             <div className="carousel">
               <Carousel1
-                slide={slide2}
+                slide={slide}
                 settings1={this.state.settings1}
                 handleClick1={this.handleClick1} />
             </div>
@@ -157,7 +155,7 @@ class Home extends Component {
           <Col lg="3">
             <div className="carousel">
               <Carousel2
-                slide={slide2}
+                slide={slide}
                 settings2={this.state.settings2}
                 handleClick2={this.handleClick2} />
             </div>
@@ -173,7 +171,7 @@ class Home extends Component {
           <Col lg="3">
             <div className="carousel">
               <Carousel4
-                slide={slide2}
+                slide={slide}
                 settings4={this.state.settings4}
                 handleClick4={this.handleClick4} />
             </div>
@@ -193,4 +191,4 @@ class Home extends Component {
 }
 
 
-export default Home;
+export default EggPage;

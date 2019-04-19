@@ -120,7 +120,7 @@ class Home extends Component {
     const { characters } = this.state;
  
     const slide = slicing(characters);
-    const slide2 = slicing(characters.reverse());
+
     // console.log(slide)
     // const arrReverse = reversed(slide);
     // console.log(arrReverse)
@@ -140,7 +140,7 @@ class Home extends Component {
           <Col lg="6">
             <div className="carousel">
               <Carousel2 className="carousel2"
-                slide={slide2}
+                slide={slide}
                 settings2={this.state.settings2}
                 handleClick2={this.handleClick2} 
                 
