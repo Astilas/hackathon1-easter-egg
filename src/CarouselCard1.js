@@ -15,7 +15,7 @@ const CarouselCard1 = (props) => (
             max-width="100%"
             src={image} alt={name}
             onClick={() => {
-              props.handleClick1(id);
+              props.handleClick1(image);
             }}
           />
           

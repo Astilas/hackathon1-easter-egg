@@ -16,7 +16,12 @@ body, .moviecard{
 color: black;
 display: none;
 }
-
+.gamebutton {
+  font-size: 40px;
+  display: flex;
+  justify-content: space-around;
+  
+}
 .eggnodisplay {
   visibility: hidden;
 }

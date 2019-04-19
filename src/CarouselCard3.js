@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardImg } from 'reactstrap';
 
-const CarouselCard2 = (props) => (
+const CarouselCard3 = (props) => (
  <div className="container">
    {
        props.egg.map(({ name, image, id }) => (
@@ -13,7 +13,7 @@ const CarouselCard2 = (props) => (
               max-width="100%" 
               src={image} alt={name} 
               onClick={() => {
-                props.handleClick2(image);
+                props.handleClick3(image);
               }}
               />
            </Card>
@@ -24,4 +24,4 @@ const CarouselCard2 = (props) => (
 
 );
 
-export default CarouselCard2;
+export default CarouselCard3;
