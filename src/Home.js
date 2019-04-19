@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import Carousel1 from './Carousel1';
 import Carousel2 from './Carousel2';
 import { Link } from 'react-router-dom';
@@ -16,6 +16,12 @@ function slicing(arr) {
   }
   return finalarr;
 }
+
+
+function reversed(arr){
+  return arr.reverse()
+}
+
 const initialSettings = {
   dots: false,
   infinite: true,
@@ -107,12 +113,6 @@ class Home extends Component {
     })
   }
 
-  match() {
-    if (this.state.idCard1 === this.state.idCard2) {
-
-    }
-  }
-
   render() {
     let eggClass = classNames({
       'eggnodisplay': this.state.idCard1 !== this.state.idCard2 || this.state.idCard1 === '',
@@ -120,18 +120,37 @@ class Home extends Component {
       image: true
     })
     const { characters } = this.state;
+ 
     const slide = slicing(characters);
+    // console.log(slide)
+    // const arrReverse = reversed(slide);
+    // console.log(arrReverse)
+
     return (
       <Container>
-        <h2> CarouselCard </h2>
-        <Carousel1
-          slide={slide}
-          settings1={this.state.settings1}
-          handleClick1={this.handleClick1} />
-        <Carousel2
-          slide={slide}
-          settings2={this.state.settings2}
-          handleClick2={this.handleClick2} />
+        <Link tag={Link} to="/">
+          <Button refresh="true" className=""  outline color="secondary">Restart</Button>
+        </Link>
+        <Row>
+          <Col lg="6">
+            <div className="carousel">
+              <Carousel1
+                slide={slide.reverse()}
+                settings1={this.state.settings1}
+                handleClick1={this.handleClick1} />
+            </div>
+          </Col>
+          <Col lg="6">
+            <div className="carousel">
+              <Carousel2 className="carousel2"
+                slide={slide}
+                settings2={this.state.settings2}
+                handleClick2={this.handleClick2} 
+                
+                />
+            </div>
+          </Col>
+        </Row>
         <button className="btn btn-black">bouton</button>
         <div>
           <Link to="/egg">

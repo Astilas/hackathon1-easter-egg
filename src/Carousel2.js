@@ -8,10 +8,10 @@ export default class TheaterSlider extends Component {
    return (
      <div className="container theaterslidercontainer">
        <Slider {...this.props.settings2}>
-         {this.props.slide.map((egg, index) => (
+         {this.props.slide.map((egg, index) => [
            // eslint-disable-next-line react/no-array-index-key
            <CarouselCard2 key={index} egg={egg} handleClick2={this.props.handleClick2}/>
-         ))}
+         ])}
        </Slider>
      </div>
    );
