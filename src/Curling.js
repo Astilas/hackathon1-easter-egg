@@ -87,9 +87,11 @@ const CarouselCard1 = (props) => (
     <h5>Les compétitions nationales</h5>
     <p className="white">- Championnats de France de curling</p>
     <p className="white">- Championnats de Suisse de curling</p>
-    <h3>Game</h3>
-    <p className="white">Game = 18 + 9 + 5 + 2 + 5 + 3 + 11 + 9 + 20 + 5</p>
-    <p className="white"> Attention: Game est NaN!</p>
+    <div className="congrats">
+      <h2>Game</h2>
+      <h4 className="white">Game = 18 + 9 + 5 + 2 + 5 + 3 + 11 + 9 + 20 + 5</h4>
+      <h4 className="white"> Attention: Game est NaN!</h4>
+    </div>
   </div>
 
 );

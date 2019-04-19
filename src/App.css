@@ -13,8 +13,8 @@
   }
 
 .logo {
-  width: 8rem;
-  animation: App-logo-spin  2s linear;
+  width: 100;
+  animation: App-logo-spin 2s infinite;
   pointer-events: none;
 } 
 
@@ -27,7 +27,7 @@
   }
 }
  
-h2 {
+h1 {
   text-align: center;
   color: white;
   margin-bottom: 50px;
@@ -56,8 +56,11 @@ text-underline-position: none;
 
 .restartbutton {
   font-size: 20px;
-  display: flex;
-  justify-content: space-around;
+  position: absolute;
+  top: 250px;
+  left: 47%;
+  margin-top:150px;
+
 }
 .eggnodisplay {
   visibility: hidden;
@@ -81,6 +84,7 @@ text-underline-position: none;
 .float{
   float:right;
   opacity:0;
+  margin-top: 100px;
 }
 
 .float:hover{
@@ -94,4 +98,12 @@ text-underline-position: none;
   color: white;
   text-align:center;
   margin-bottom:50px;
+}
+
+.img-width{
+  max-width:100%;
+}
+
+.buttonrow{
+  margin-top:150px
 }

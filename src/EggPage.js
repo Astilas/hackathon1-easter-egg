@@ -5,6 +5,7 @@ import Carousel2 from './Carousel2';
 import Carousel3 from './Carousel3';
 import Carousel4 from './Carousel4';
 import { Link } from 'react-router-dom';
+import logo from './logo.svg';
 import axios from 'axios';
 // import { threadId } from 'worker_threads';
 
@@ -142,7 +143,7 @@ class EggPage extends Component {
     const slide = slicing(eggs);
     return (
       <Container>
-         <h2>Roulegg</h2>
+          <h1>Roulegg<img className="logo" src={logo} alt="logo"/></h1>
         <Row>
           <Col lg="3">
             <div className="carousel">

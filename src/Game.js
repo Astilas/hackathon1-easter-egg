@@ -8,7 +8,7 @@ export default class Example extends React.Component {
     return (
       <Container>
          <h2>Roulegg</h2>
-        <Row>
+        <Row className="buttonrow">
           <Col lg="6">
             <Link to="/character">
               <Button className="gamebutton mx-auto" color="info">Niveau Noob</Button>

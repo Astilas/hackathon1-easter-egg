@@ -127,7 +127,7 @@ class Home extends Component {
 
     return (
       <Container>
-        <h2>Roulegg<img className="logo" src={logo} alt="logo"/></h2>
+        <h1>Roulegg<img className="logo" src={logo} alt="logo"/></h1>
         <Row>
           <Col lg="6">
             <div className="carousel">
@@ -148,15 +148,15 @@ class Home extends Component {
             </div>
           </Col>
         </Row>
-       
-          <Link to="/congrats">
-            <img className="float" src="https://www.rocketprices.com/images/rocket%20league/items/XboxOne-Golden-Egg.png" alt="golden-egg" />
-          </Link>
 
         <Button className="mx-auto restartbutton" refresh="true" onClick={() => window.location.reload()} outline color="secondary">Restart</Button>
         <Link to="/egg">
           <img className={eggClass} src={this.state.egg.image} alt="egg" />
         </Link>
+
+        <Link to="/congrats">
+            <img className="float" src="https://www.rocketprices.com/images/rocket%20league/items/XboxOne-Golden-Egg.png" alt="golden-egg" />
+          </Link>
       </Container>
     );
   }
