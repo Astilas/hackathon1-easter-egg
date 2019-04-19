@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import Carousel1 from './Carousel1';
 import Carousel2 from './Carousel2';
+import Carousel3 from './Carousel3';
+import Carousel4 from './Carousel4';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import { threadId } from 'worker_threads';
@@ -19,11 +21,11 @@ function slicing(arr) {
 const initialSettings = {
   dots: false,
   infinite: true,
-  speed: 2,
+  speed: 5,
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 80,
+  autoplaySpeed: 100,
   arrows: false,
   pauseOnHover: false,
   vertical: false,
@@ -65,13 +67,19 @@ class Home extends Component {
       character: [],
       settings1: initialSettings,
       settings2: initialSettings,
+      settings3: initialSettings,
+      settings4: initialSettings,
       idCard1: '',
       idCard2: '',
+      idCard3: '',
+      idCard4: '',
     };
     this.getEggs = this.getEggs.bind(this);
     this.getCharacter = this.getCharacter.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
+    this.handleClick3 = this.handleClick3.bind(this);
+    this.handleClick4 = this.handleClick4.bind(this);
   }
 
   componentDidMount() {
@@ -104,27 +112,37 @@ class Home extends Component {
       settings2:
         { ...this.state.settings2, autoplay: !this.state.settings2.autoplay },
       idCard2: image
-
     })
   }
 
-  match() {
-    if (this.state.idCard1 === this.state.idCard2) {
-
-    }
+  handleClick3(image) {
+    this.setState({
+      settings3:
+        { ...this.state.settings3, autoplay: !this.state.settings3.autoplay },
+      idCar3: image
+    })
   }
+
+  handleClick4(image) {
+    this.setState({
+      settings4:
+        { ...this.state.settings4, autoplay: !this.state.settings4.autoplay },
+      idCard4: image
+    })
+  }
+
 
   render() {
     let eggClass = classNames({
       'eggnodisplay': this.state.idCard1 !== this.state.idCard2 || this.state.idCard1 === '',
-      'eggimage': this.state.idCard1 === this.state.idCard2,
+      'eggimage': (this.state.idCard1 === this.state.idCard2) && (this.state.idCard2 === this.state.idCard3) && (this.state.idCard1 === this.state.idCard4),
     })
     const { eggs } = this.state;
     const slide = slicing(eggs);
     return (
       <Container>
         <Row>
-          <Col lg="6">
+          <Col lg="3">
             <div className="carousel">
               <Carousel1
                 slide={slide}
@@ -132,12 +150,28 @@ class Home extends Component {
                 handleClick1={this.handleClick1} />
             </div>
           </Col>
-          <Col lg="6">
+          <Col lg="3">
             <div className="carousel">
               <Carousel2
                 slide={slide}
                 settings2={this.state.settings2}
                 handleClick2={this.handleClick2} />
+            </div>
+          </Col>
+          <Col lg="3">
+            <div className="carousel">
+              <Carousel3
+                slide={slide}
+                settings3={this.state.settings3}
+                handleClick3={this.handleClick3} />
+            </div>
+          </Col>
+          <Col lg="3">
+            <div className="carousel">
+              <Carousel4
+                slide={slide}
+                settings4={this.state.settings4}
+                handleClick4={this.handleClick4} />
             </div>
           </Col>
         </Row>

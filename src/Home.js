@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import Carousel1 from './Carousel1';
 import Carousel2 from './Carousel2';
 import { Link } from 'react-router-dom';
@@ -107,7 +107,6 @@ class Home extends Component {
     })
   }
 
-
   render() {
     let eggClass = classNames({
       'eggnodisplay': this.state.idCard1 !== this.state.idCard2 || this.state.idCard1 === '',
@@ -117,6 +116,9 @@ class Home extends Component {
     const slide = slicing(characters);
     return (
       <Container>
+        <Link tag={Link} to="/">
+          <Button refresh="true" className=""  outline color="secondary">Restart</Button>
+        </Link>
         <Row>
           <Col lg="6">
             <div className="carousel">

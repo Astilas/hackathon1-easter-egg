@@ -3,11 +3,19 @@
   width: 200px;
   height: 200px;
  }
+ .white {
+    color: white;
+ }
+  
+ 
 h2 {
   text-align: center;
   color: white;
   margin-bottom: 150px;
   margin-top: 50px;
+}
+h3, h4 {
+  color: grey;
 }
 body, .moviecard{
   background-color: black;
@@ -16,7 +24,12 @@ body, .moviecard{
 color: black;
 display: none;
 }
+.gamebutton {
+  font-size: 40px;
+  display: flex;
+  justify-content: space-around;
 
+}
 .eggnodisplay {
   visibility: hidden;
 }
