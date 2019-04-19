@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import Carousel1 from './Carousel1';
 import Carousel2 from './Carousel2';
 import { Link } from 'react-router-dom';
+import logo from './logo.svg';
 import axios from 'axios';
 // import { threadId } from 'worker_threads';
 
@@ -18,18 +19,14 @@ function slicing(arr) {
 }
 
 
-function reversed(arr){
-  return arr.reverse()
-}
-
 const initialSettings = {
   dots: false,
   infinite: true,
-  speed: 2,
+  speed: 5,
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 40,
+  autoplaySpeed: 100,
   arrows: false,
   pauseOnHover: false,
   vertical: false,
@@ -113,6 +110,7 @@ class Home extends Component {
     })
   }
 
+
   render() {
     let eggClass = classNames({
       'eggnodisplay': this.state.idCard1 !== this.state.idCard2 || this.state.idCard1 === '',
@@ -122,20 +120,19 @@ class Home extends Component {
     const { characters } = this.state;
  
     const slide = slicing(characters);
+    const slide2 = slicing(characters.reverse());
     // console.log(slide)
     // const arrReverse = reversed(slide);
     // console.log(arrReverse)
 
     return (
       <Container>
-        <Link tag={Link} to="/">
-          <Button refresh="true" className=""  outline color="secondary">Restart</Button>
-        </Link>
+        <h2>Roulegg<img src={logo} alt="logo"/></h2>
         <Row>
           <Col lg="6">
             <div className="carousel">
               <Carousel1
-                slide={slide.reverse()}
+                slide={slide}
                 settings1={this.state.settings1}
                 handleClick1={this.handleClick1} />
             </div>
@@ -143,7 +140,7 @@ class Home extends Component {
           <Col lg="6">
             <div className="carousel">
               <Carousel2 className="carousel2"
-                slide={slide}
+                slide={slide2}
                 settings2={this.state.settings2}
                 handleClick2={this.handleClick2} 
                 
@@ -151,18 +148,15 @@ class Home extends Component {
             </div>
           </Col>
         </Row>
-        <button className="btn btn-black">bouton</button>
-        <div>
-          <Link to="/egg">
-            <img className={eggClass} src={this.state.egg.image} alt="egg"/>
-          </Link>
-
+       
           <Link to="/congrats">
             <img className="float" src="https://www.rocketprices.com/images/rocket%20league/items/XboxOne-Golden-Egg.png" alt="golden-egg" />
           </Link>
 
-
-        </div>
+        <Button className="mx-auto restartbutton" refresh="true" onClick={() => window.location.reload()} outline color="secondary">Restart</Button>
+        <Link to="/egg">
+          <img className={eggClass} src={this.state.egg.image} alt="egg" />
+        </Link>
       </Container>
     );
   }

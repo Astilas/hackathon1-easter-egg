@@ -4,7 +4,7 @@ import { Card, CardImg } from 'reactstrap';
 const CarouselCard2 = (props) => (
  <div className="container marge">
    {
-       props.egg.map(({ name, image, id }) => (
+       props.egg.map(({ name, image }) => (
 
            <Card key={image} className="moviecard" >
              <CardImg className="cardimage mx-auto" 

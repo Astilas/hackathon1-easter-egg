@@ -29,7 +29,7 @@ class ModalExample extends React.Component {
             <b>Tu dois d'abord finir le niveau Noob pour débloqué celui-ci</b><br />
           </ModalBody>
           <ModalFooter>
-            <Link to="/">
+            <Link to="/character">
               <Button color="primary" onClick={this.toggle}>Aller au niveau Noob</Button>
             </Link>
 

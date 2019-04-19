@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import Carousel1 from './Carousel1';
 import Carousel2 from './Carousel2';
 import Carousel3 from './Carousel3';
@@ -140,13 +140,16 @@ class Home extends Component {
       })
     const { eggs } = this.state;
     const slide = slicing(eggs);
+    const slide2 = slicing(eggs.reverse());
+
     return (
       <Container>
+         <h2>Roulegg</h2>
         <Row>
           <Col lg="3">
             <div className="carousel">
               <Carousel1
-                slide={slide}
+                slide={slide2}
                 settings1={this.state.settings1}
                 handleClick1={this.handleClick1} />
             </div>
@@ -154,7 +157,7 @@ class Home extends Component {
           <Col lg="3">
             <div className="carousel">
               <Carousel2
-                slide={slide}
+                slide={slide2}
                 settings2={this.state.settings2}
                 handleClick2={this.handleClick2} />
             </div>
@@ -170,14 +173,14 @@ class Home extends Component {
           <Col lg="3">
             <div className="carousel">
               <Carousel4
-                slide={slide}
+                slide={slide2}
                 settings4={this.state.settings4}
                 handleClick4={this.handleClick4} />
             </div>
           </Col>
         </Row>
-        <button className="btn btn-black">bouton</button>
-        <Link to="/">
+        <Button className="mx-auto restartbutton" refresh="true" onClick={() => window.location.reload()} outline color="secondary">Restart</Button>
+        <Link to="/character">
           <img className={eggClass} src={this.state.character.image} alt="egg" />
         </Link>
 

@@ -7,9 +7,10 @@ export default class Example extends React.Component {
   render() {
     return (
       <Container>
+         <h2>Roulegg</h2>
         <Row>
           <Col lg="6">
-            <Link to="/">
+            <Link to="/character">
               <Button className="gamebutton mx-auto" color="info">Niveau Noob</Button>
             </Link>
           </Col>
