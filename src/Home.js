@@ -90,20 +90,19 @@ class Home extends Component {
   }
 
 
-  handleClick1(id) {
-    console.log('click1', id)
+  handleClick1(image) {
     this.setState({
       settings1: { ...this.state.settings1, autoplay: !this.state.settings1.autoplay },
-      idCard1: id
+      idCard1: image
     })
   }
 
 
-  handleClick2(id) {
+  handleClick2(image) {
     this.setState({
       settings2:
         { ...this.state.settings2, autoplay: !this.state.settings2.autoplay },
-      idCard2: id
+      idCard2: image
 
     })
   }
@@ -118,6 +117,7 @@ class Home extends Component {
     let eggClass = classNames({
       'eggnodisplay': this.state.idCard1 !== this.state.idCard2 || this.state.idCard1 === '',
       'eggimage': this.state.idCard1 === this.state.idCard2,
+      image: true
     })
     const { characters } = this.state;
     const slide = slicing(characters);
@@ -133,9 +133,17 @@ class Home extends Component {
           settings2={this.state.settings2}
           handleClick2={this.handleClick2} />
         <button className="btn btn-black">bouton</button>
-        <Link to="/egg">
-          <img className={eggClass} src={this.state.egg.image} alt="egg"/>
-        </Link>
+        <div>
+          <Link to="/egg">
+            <img className={eggClass} src={this.state.egg.image} alt="egg"/>
+          </Link>
+
+          <Link to="/congrats">
+            <img className="float" src="https://www.rocketprices.com/images/rocket%20league/items/XboxOne-Golden-Egg.png" alt="golden-egg" />
+          </Link>
+
+
+        </div>
       </Container>
     );
   }

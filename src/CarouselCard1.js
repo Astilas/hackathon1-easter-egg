@@ -8,14 +8,14 @@ const CarouselCard1 = (props) => (
     {
       props.character.map(({ name, image, id }) => (
 
-        <Card key={id} className="moviecard">
+        <Card key={image} className="moviecard">
           <CardImg className="cardimage mx-auto"
             top width="100%"
             max-height="100%"
             max-width="100%"
             src={image} alt={name}
             onClick={() => {
-              props.handleClick1(id);
+              props.handleClick1(image);
             }}
           />
           

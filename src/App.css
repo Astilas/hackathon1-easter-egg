@@ -19,7 +19,23 @@ display: none;
 .eggimage {
   width: 200px;
   height: 200px;
-  display: flex;
-  justify-content: space-around;
 }
 
+.image {
+  display:flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.marge{
+  margin-bottom:150px;
+}
+
+.float{
+  float:right;
+  opacity:0;
+}
+
+.float:hover{
+  opacity:1;
+}
