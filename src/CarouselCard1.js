@@ -6,9 +6,9 @@ import { Card, CardImg } from 'reactstrap';
 const CarouselCard1 = (props) => (
   <div className="container">
     {
-      props.character.map(({ name, image, id }) => (
+      props.character.map(({ name, image}) => (
 
-        <Card key={id} className="moviecard">
+        <Card key={image} className="moviecard">
           <CardImg className="cardimage mx-auto"
             top width="100%"
             max-height="100%"
@@ -18,7 +18,6 @@ const CarouselCard1 = (props) => (
               props.handleClick1(image);
             }}
           />
-          
         </Card>
 
       ))

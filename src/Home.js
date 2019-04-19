@@ -23,7 +23,7 @@ const initialSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 40,
+  autoplaySpeed: 800,
   arrows: false,
   pauseOnHover: false,
   vertical: false,
@@ -117,8 +117,12 @@ class Home extends Component {
     const slide = slicing(characters);
     return (
       <Container>
+<<<<<<< HEAD
         <h2>Roulegg</h2>
         <Button className="" outline color="secondary">Restart</Button>
+=======
+          <Button refresh="true" onClick={() => window.location.reload()} outline color="secondary">Restart</Button>
+>>>>>>> 878b04f72fc0c1776fe970123362bd92dbff7917
         <Row>
           <Col lg="6">
             <div className="carousel">
