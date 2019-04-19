@@ -5,8 +5,12 @@
  }
  .white {
     color: white;
+
  }
-  
+  .white:hover{
+    text-decoration: none;
+    color:white;
+  }
  
 h2 {
   text-align: center;
@@ -14,8 +18,10 @@ h2 {
   margin-bottom: 150px;
   margin-top: 50px;
 }
-h3, h4 {
+h3, h4, h5 {
   color: grey;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 body, .moviecard{
   background-color: black;
@@ -28,8 +34,11 @@ display: none;
   font-size: 40px;
   display: flex;
   justify-content: space-around;
-
 }
+.gamebutton:hover {
+text-underline-position: none;
+}
+
 .eggnodisplay {
   visibility: hidden;
 }

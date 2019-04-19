@@ -10,9 +10,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h2>Roulegg</h2>
-        <Route path="/curling" component={Curling} />
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact component={Curling} />
+        <Route path="/character" exact component={Home} />
         <Route path="/egg" component={EggPage} />
         <Route path="/game" component={Game} />
 

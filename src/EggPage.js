@@ -141,6 +141,7 @@ class Home extends Component {
     const slide = slicing(eggs);
     return (
       <Container>
+         <h2>Roulegg</h2>
         <Row>
           <Col lg="3">
             <div className="carousel">
@@ -176,7 +177,7 @@ class Home extends Component {
           </Col>
         </Row>
         <button className="btn btn-black">bouton</button>
-        <Link to="/">
+        <Link to="/character">
           <img className={eggClass} src={this.state.character.image} alt="egg" />
         </Link>
 

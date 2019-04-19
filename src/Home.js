@@ -107,6 +107,7 @@ class Home extends Component {
     })
   }
 
+
   render() {
     let eggClass = classNames({
       'eggnodisplay': this.state.idCard1 !== this.state.idCard2 || this.state.idCard1 === '',
@@ -116,9 +117,8 @@ class Home extends Component {
     const slide = slicing(characters);
     return (
       <Container>
-        <Link tag={Link} to="/">
-          <Button refresh="true" className=""  outline color="secondary">Restart</Button>
-        </Link>
+        <h2>Roulegg</h2>
+        <Button className="" outline color="secondary">Restart</Button>
         <Row>
           <Col lg="6">
             <div className="carousel">
